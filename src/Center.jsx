@@ -2,7 +2,7 @@ import React from "react";
 import avatar from "/src/assets/my-dp.jpeg";
 
 export default function Center() {
-  const [noIngredients, setNoIngredients] = React.useState(["orange", "banana", "apple", "mango"]);
+  const [noIngredients, setNoIngredients] = React.useState([]);
   const ingredientsList = noIngredients.map((item) => <li>{item}</li>);
 
   let [recipeShown, setRecipeShown] = React.useState(false);
