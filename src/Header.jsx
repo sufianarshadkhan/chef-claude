@@ -1,3 +1,4 @@
+
 import chefClaudeLogo from '/src/assets/chef-logo.jpg' 
 export default function Header(){
     return (
@@ -8,4 +9,5 @@ export default function Header(){
             <h4 className="title">Chef Claude</h4>
         </header>
     );
+
 }

@@ -6,8 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+<<<<<<< HEAD
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
+=======
+    "lint": "eslint .",
+    "preview": "vite preview"
+>>>>>>> bbde96d1daa0fe3912ac6b4fe530261f2f87101c
   },
   "dependencies": {
     "react": "^19.1.0",
@@ -21,7 +26,10 @@
     "eslint": "^9.25.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
+<<<<<<< HEAD
     "gh-pages": "^6.3.0",
+=======
+>>>>>>> bbde96d1daa0fe3912ac6b4fe530261f2f87101c
     "globals": "^16.0.0",
     "vite": "^6.3.5"
   }

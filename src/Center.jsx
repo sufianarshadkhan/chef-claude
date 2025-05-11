@@ -2,19 +2,20 @@ import React from "react";
 import avatar from "/src/assets/my-dp.jpeg";
 
 export default function Center() {
-  const [noIngredients, setNoIngredients] = React.useState(["orange", "banana", "apple", "mango"]);
-  const ingredientsList = noIngredients.map((item) => <li>{item}</li>);
+  const [noIngredients, setNoIngredients] = React.useState([]);
+  const ingredientsList = noIngredients.map((item, index) => <li key={index}>{item}</li>);
 
-  let [recipeShown, setRecipeShown] = React.useState(false);
+  const [recipeShown, setRecipeShown] = React.useState(false);
 
   function handleRecipe() {
-    setRecipeShown((prevRecipe) => !prevRecipe);
-    
+    setRecipeShown(prevRecipe => !prevRecipe);
   }
+
   function handleSubmit(formData) {
     const newItem = formData.get("ingredient");
-    setNoIngredients((prevItem) => [...prevItem, newItem]);
+    setNoIngredients(prevItem => [...prevItem, newItem]);
   }
+
   const styles = {
     container: {
       maxWidth: "600px",
@@ -48,7 +49,6 @@ export default function Center() {
           aria-label="Add ingredient"
           name="ingredient"
         />
-
         <button>Add Ingredients</button>
       </form>
 
@@ -68,40 +68,40 @@ export default function Center() {
         </section>
       )}
 
-       {recipeShown && <section>
-        <div className="recipe-container" style={styles.container}>
-          <h1 style={styles.title}>Get Recipe by Chef Claude</h1>
-          <img
-            src="https://example.com/chef-claude-dish.jpg"
-            alt="Dish by Chef Claude"
-            style={styles.image}
-          />
+      {recipeShown && (
+        <section>
+          <div className="recipe-container" style={styles.container}>
+            <h1 style={styles.title}>Get Recipe by Chef Claude</h1>
+            <img
+              src="https://example.com/chef-claude-dish.jpg"
+              alt="Dish by Chef Claude"
+              style={styles.image}
+            />
 
-          <div className="ingredients" style={styles.section}>
-            <h3>Ingredients:</h3>
-            <ul>
-              <li>2 chicken breasts</li>
-              <li>1 tbsp olive oil</li>
-              <li>1 tsp garlic powder</li>
-              <li>1/2 cup heavy cream</li>
-              <li>Salt and pepper to taste</li>
-            </ul>
-          </div>
+            <div className="ingredients" style={styles.section}>
+              <h3>Ingredients:</h3>
+              <ul>
+                <li>2 chicken breasts</li>
+                <li>1 tbsp olive oil</li>
+                <li>1 tsp garlic powder</li>
+                <li>1/2 cup heavy cream</li>
+                <li>Salt and pepper to taste</li>
+              </ul>
+            </div>
 
-          <div className="instructions" style={styles.section}>
-            <h3>Instructions:</h3>
-            <ol>
-              <li>Heat the olive oil in a skillet over medium heat.</li>
-              <li>Season chicken with salt, pepper, and garlic powder.</li>
-              <li>
-                Cook chicken for 6–7 minutes on each side or until fully cooked.
-              </li>
-              <li>Reduce heat, add cream, and simmer for 5 minutes.</li>
-              <li>Serve hot with your favorite sides.</li>
-            </ol>
+            <div className="instructions" style={styles.section}>
+              <h3>Instructions:</h3>
+              <ol>
+                <li>Heat the olive oil in a skillet over medium heat.</li>
+                <li>Season chicken with salt, pepper, and garlic powder.</li>
+                <li>Cook chicken for 6–7 minutes on each side or until fully cooked.</li>
+                <li>Reduce heat, add cream, and simmer for 5 minutes.</li>
+                <li>Serve hot with your favorite sides.</li>
+              </ol>
+            </div>
           </div>
-        </div>
-      </section>}
+        </section>
+      )}
     </main>
   );
 }
