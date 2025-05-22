@@ -1,3 +1,4 @@
+
 import { InferenceClient } from '@huggingface/inference';
 
 const hf = new InferenceClient(import.meta.env.VITE_HF_ACCESS_TOKEN);

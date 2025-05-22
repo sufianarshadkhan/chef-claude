@@ -1,3 +1,4 @@
+
 export default function IngredientsList(props){
 
     const ingredientsList = props.noIngredients.map((item, index) => 
@@ -19,4 +20,4 @@ export default function IngredientsList(props){
           )}
         </section>
     )
-}
+  }
